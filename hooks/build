@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+echo "------ HOOK START - BUILD -------"
+printenv
+
+docker build -t $IMAGE_NAME -f $DOCKERFILE_PATH --build-arg VITE_ACCOUNT_URL=$VITE_ACCOUNT_URL --build-arg VITE_PROJECT_APP_URL=$VITE_PROJECT_APP_URL .
+
+echo "------ HOOK END - BUILD -------"
